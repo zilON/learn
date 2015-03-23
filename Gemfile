@@ -25,10 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 
-# fun things
-gem 'bourbon'
-gem 'neat'
-gem 'refills'
+
 gem 'slim-rails'
 
 
