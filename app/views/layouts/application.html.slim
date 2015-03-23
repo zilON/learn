@@ -1,0 +1,15 @@
+doctype html
+= render 'shared/html_tag'
+head
+  title Learn
+  = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+  = yield :stylesheets
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  meta charset='#{Rails.application.config.encoding}'
+  = csrf_meta_tags
+body
+  section.topbar
+  section.layoute
+    .large-12-columns
+      = yield
+
