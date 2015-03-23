@@ -9,7 +9,16 @@ head
   = csrf_meta_tags
 body
   section.topbar
+    .logo
+      .large-12-columns
+        i.fa.fa-server &nbsp Little sticky sheet
   section.layoute
     .large-12-columns
       = yield
+
+  section.footer
+    .large-12-columns
+      p &copy; Little sticky sheet
+      p =Time.now.year
+
 

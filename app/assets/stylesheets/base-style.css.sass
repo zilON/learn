@@ -1,11 +1,34 @@
+.large-12-columns
+  @include span-columns(12)
+.large-11-columns
+  @include span-columns(11)
+.large-10-columns
+  @include span-columns(10)
+.large-9-columns
+  @include span-columns(9)
+.large-8-columns
+  @include span-columns(8)
+
 section.topbar
-  height: 100px
-  background-color: red
+  background-color: $c-iris-blue
+  .logo
+    @include outer-container
+    font-weight: bold
+    color: $light-font
+    .large-12-columns
 section.layoute
+  color: $dark-font
   @include outer-container
   .large-12-columns
-    h1
-    @include span-columns(12)
-    background-color: yellow
-    padding: 5px 10px 0 10px
+    padding: 5px 5px 0 5px
+
+section.footer
+  @include outer-container
+  padding-top: 25px
+  .large-12-columns
+    border-top: 1px solid $c-regent-blue
+    padding: 5px 5px 0 5px
+    p
+      margin: 0
+      text-align: center
 
