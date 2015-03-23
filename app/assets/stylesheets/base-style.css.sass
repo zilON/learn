@@ -1,3 +1,10 @@
+body
+  min-height: 100%
+  height: auto !important
+  height: 100%
+  margin: 0 auto -250px
+  @include linear-gradient(50deg, #5F0BE0, #EB417B)
+
 .large-12-columns
   @include span-columns(12)
 .large-11-columns
@@ -10,19 +17,23 @@
   @include span-columns(8)
 
 section.topbar
-  background-color: $c-iris-blue
+  background-color: RGBA(0, 176, 199, 0.6)
   .logo
     @include outer-container
+    padding: 10px 0 0 10px
+    height: 45px
     font-weight: bold
     color: $light-font
     .large-12-columns
 section.layoute
+  background-color: rgba(255, 255, 255, 0.7)
   color: $dark-font
   @include outer-container
   .large-12-columns
     padding: 5px 5px 0 5px
 
 section.footer
+  background-color: rgba(255, 255, 255, 0.5)
   @include outer-container
   padding-top: 25px
   .large-12-columns
