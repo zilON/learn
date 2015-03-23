@@ -43,3 +43,7 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'bourbon'
+gem 'neat'
+gem 'refills'
+gem 'slim-rails'
