@@ -23,8 +23,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-
-
+gem 'bourbon', '~> 4.2.1' # sass mixins
+gem 'neat' # sass grid
 
 gem 'slim-rails'
 gem "font-awesome-rails" # fonts icons
