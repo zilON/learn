@@ -1,16 +1,29 @@
 =render "shared/buttons"
 .large-12-columns
-  table
-    tbody
+  h1.cards = I18n.t('card.all')
+
+.large-12-columns
+  table.cards
+    thead
       tr
-        th original
-        th translated
-        th review at
+        th = I18n.t('card.id')
+        th = I18n.t('card.original')
+        th = I18n.t('card.translated')
+        th = I18n.t('card.review')
+        th = I18n.t('card.updated')
+        th = I18n.t('card.created')
+    tbody
       - @cards.each do |c|
         tr
+          td
+            = c.id
           td
             = c.original
           td
             = c.translated
           td
             = c.review
+          td
+            = c.updated_at.to_s(:default)
+          td
+            = c.created_at.to_s(:default)
