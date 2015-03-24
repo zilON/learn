@@ -9,11 +9,12 @@ head
 body
   section.topbar
     .logo
-      .large-12-columns
-        =render "shared/lang"
-        i.fa.fa-server
-          = link_to " Little sticky sheet", root_url
+      =render "shared/lang"
+      i.fa.fa-server
+        = link_to " Little sticky sheet", root_url
   section.layoute
+    .large-12-columns
+      p Первый в мире удобный менеджер флеш-карточек. Именно так
     .large-12-columns
       = yield
 
