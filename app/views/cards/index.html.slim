@@ -1,1 +1,16 @@
 =render "shared/buttons"
+.large-12-columns
+  table
+    tbody
+      tr
+        th original
+        th translated
+        th review at
+      - @cards.each do |c|
+        tr
+          td
+            = c.original
+          td
+            = c.translated
+          td
+            = c.review
