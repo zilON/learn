@@ -8,10 +8,11 @@ Rails.application.routes.draw do
 
   # resources :cards
 
-  scope "(:locale)", :locale => /en|ru/ do
+  scope "(:locale)", locale: /#{I18n.available_locales.join('|')}/ do
     root "home#index"
     resources :cards
   end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
