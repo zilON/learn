@@ -1,0 +1,23 @@
+doctype html
+html lang='#{ ::I18n.locale}'
+head
+  title Learn
+  = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+  = yield :stylesheets
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+body
+  section.topbar
+    .logo
+      .large-12-columns
+        i.fa.fa-server &nbsp Little sticky sheet
+  section.layoute
+    .large-12-columns
+      = yield
+
+  section.footer
+    .large-12-columns
+      p &copy; Little sticky sheet
+      p =Time.now.year
+
+
