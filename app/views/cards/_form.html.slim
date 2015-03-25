@@ -1,0 +1,24 @@
+= simple_form_for :card, url: cards_path do |f|
+  .large-12-columns
+    - if @card.errors.any?
+      id#error_explanation
+        h2 = pluralize(@card.errors.count, "error")
+        p prohibited this card from being saved:
+        ul
+          - @card.errors.full_messages.each do |message|
+            li = message
+  .large-12-columns
+    = f.error_notification
+    .original.large-3-columns
+      = f.input :original_text
+    .translated.large-3-columns
+      = f.input :translated_text
+    .review-date.large-6-columns
+      = f.input :review_date, :as => :datetime, :default => Date.today + 3
+  .large-12-columns
+    = f.button :submit, class: 'pull-right'
+    button.blue.margin-r.fa.fa-list.pull-right = link_to t('card.back'), cards_path
+
+
+
+

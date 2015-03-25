@@ -1,7 +1,9 @@
 ru:
+  logo_name: Маленький липкий листок
   card:
     all: Все карточки
     new: Добавить карточку
+    new_card: Новая карточка
     id: id
     original: Оригинал
     translated: Переведен

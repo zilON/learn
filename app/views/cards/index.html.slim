@@ -11,6 +11,7 @@
         th = t('card.review')
         th = t('card.updated')
         th = t('card.created')
+        th
     tbody
       - @cards.each do |c|
         tr
@@ -23,6 +24,7 @@
           td
             = c.review_date.to_s(:short)
           td
-            = c.updated_at.to_s(:default)
+            = c.updated_at.to_s(:short)
           td
-            = c.created_at.to_s(:default)
+            = c.created_at.to_s(:short)
+          td.actions

@@ -1,5 +1,5 @@
 doctype html
-html lang="#{I18n.locale}"
+html lang="#{I18n.locale}" data-no-turbolink="true"
   head
     title Learn
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
@@ -12,7 +12,7 @@ html lang="#{I18n.locale}"
       .logo
         = render "shared/lang"
         i.fa.fa-server
-          = link_to " Little sticky sheet", root_url
+          = link_to t('logo_name'), root_path
     section.layoute
       .large-12-columns
         p Первый в мире удобный менеджер флеш-карточек. Именно так

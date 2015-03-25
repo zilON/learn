@@ -1,7 +1,9 @@
 en:
+  logo_name: Little sticky sheet
   card:
     all: All cards
-    new: New card
+    new: Add card
+    new_card: New card
     id: id
     original: Original
     translated: Translated
