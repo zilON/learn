@@ -1,0 +1,28 @@
+=render "shared/buttons"
+.large-12-columns
+  h1.cards = t('card.all')
+.large-12-columns
+  table.cards
+    thead
+      tr
+        th = t('card.id')
+        th = t('card.original')
+        th = t('card.translated')
+        th = t('card.review')
+        th = t('card.updated')
+        th = t('card.created')
+    tbody
+      - @cards.each do |c|
+        tr
+          td
+            = c.id
+          td
+            = c.original_text
+          td
+            = c.translated_text
+          td
+            = c.review_date.to_s(:short)
+          td
+            = c.updated_at.to_s(:default)
+          td
+            = c.created_at.to_s(:default)

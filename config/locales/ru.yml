@@ -1,0 +1,10 @@
+ru:
+  card:
+    all: Все карточки
+    new: Добавить карточку
+    id: id
+    original: Оригинал
+    translated: Переведен
+    review: Проверен
+    updated: Обновлен
+    created: Создан

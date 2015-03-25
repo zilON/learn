@@ -4,7 +4,15 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root "home#index"
+  # root "home#index"
+
+  # resources :cards
+
+  scope "(:locale)", locale: /#{I18n.available_locales.join('|')}/ do
+    root "home#index"
+    resources :cards
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
