@@ -17,11 +17,11 @@
           td
             = c.id
           td
-            = c.original
+            = c.original_text
           td
-            = c.translated
+            = c.translated_text
           td
-            = c.review
+            = c.review_date.to_s(:short)
           td
             = c.updated_at.to_s(:default)
           td
