@@ -1,26 +1,27 @@
 doctype html
-html lang='#{ ::I18n.locale}'
-head
-  title Learn
-  = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-  = yield :stylesheets
-  = javascript_include_tag 'application', 'data-turbolinks-track' => true
-  = csrf_meta_tags
-body
-  section.topbar
-    .logo
-      =render "shared/lang"
-      i.fa.fa-server
-        = link_to " Little sticky sheet", root_url
-  section.layoute
-    .large-12-columns
-      p Первый в мире удобный менеджер флеш-карточек. Именно так
-    .large-12-columns
-      = yield
+html lang="#{I18n.locale}"
+  head
+    title Learn
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = yield :stylesheets
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    section.topbar
 
-  section.footer
-    .large-12-columns
-      p &copy; Little sticky sheet
-      p =Time.now.year
+      .logo
+        = render "shared/lang"
+        i.fa.fa-server
+          = link_to " Little sticky sheet", root_url
+    section.layoute
+      .large-12-columns
+        p Первый в мире удобный менеджер флеш-карточек. Именно так
+      .large-12-columns
+        = yield
+
+    section.footer
+      .large-12-columns
+        p &copy; Little sticky sheet
+        p = Time.now.year
 
 
