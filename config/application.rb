@@ -21,11 +21,6 @@ module Learn
     config.i18n.default_locale = :en
     I18n.available_locales = [:en, :ru]
 
-    def set_locale
-     I18n.locale = params[:locale] || I18n.default_locale
-     Rails.application.routes.default_url_options[:locale]= I18n.locale
-    end
-
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
   end
