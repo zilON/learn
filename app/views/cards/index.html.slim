@@ -28,3 +28,9 @@
           td
             = c.created_at.to_s(:short)
           td.actions
+            button.blue.margin-r.fa.fa-list.pull-right = link_to t('card.back'), cards_path
+            / = link_to 'Edit', show_card_path(@card, c)
+            = link_to 'Show', card_path(@card, c)
+            = link_to 'Edit', edit_card_path(@card, c)
+            = link_to 'Destroy', card_path(@card, c),
+              data: { confirm: 'Are you sure?' }
