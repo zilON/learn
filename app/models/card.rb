@@ -1,6 +1,7 @@
 
 class Card < ActiveRecord::Base
-  before_validation :normalize_name
+  before_validation :normalize_name, :review_date
+
   before_save :capitalize_name
 
   validates :original_text,
@@ -12,9 +13,12 @@ class Card < ActiveRecord::Base
 
   def original_and_translated_are_different
     if original_text == translated_text
-      errors.add(:original_text, 'must be different to translated')
-      errors.add(:translated_text, 'must be different to original')
+      errors.add(I18n.t("card.original"), I18n.t("card.original_translated"))
+      errors.add(I18n.t("card.translated"), I18n.t("card.translated_original"))
     end
+  end
+  def review_date
+    self.review_date = Time.now + 3.days
   end
 
   protected
@@ -27,6 +31,7 @@ class Card < ActiveRecord::Base
       self.original_text = self.original_text.capitalize
       self.translated_text = self.translated_text.capitalize
     end
+
 end
 
 

@@ -1,22 +1,19 @@
-= simple_form_for @card do |f|
-  .large-12-columns
-    - if @card.errors.any?
+= simple_form_for(@card) do |f|
+  - if @card.errors.any?
+    .large-12-columns.error
       id#error_explanation
         h2 = pluralize(@card.errors.count, "error")
-        p prohibited this card from being saved:
+        p = f.error_notification
         ul
           - @card.errors.full_messages.each do |message|
             li = message
-
   .large-12-columns
-    = f.error_notification
-    .original.large-3-columns
+    .original.large-6-columns
       = f.input :original_text
-    .translated.large-3-columns
+    .translated.large-6-columns
       = f.input :translated_text
-    .review-date.large-6-columns
-      = f.input :review_date, :as => :datetime, :default => Date.today + 3
-  .large-12-columns
-    = f.button :submit, class: 'pull-right'
+  = f.button :submit, class: 'pull-right'
+
+
 
 

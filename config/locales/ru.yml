@@ -1,12 +1,24 @@
 ru:
   logo_name: Маленький липкий листок
   card:
+    title: Карточка
     all: Все карточки
     new: Добавить карточку
     new_card: Новая карточка
     id: id
-    original: Оригинал
-    translated: Переведен
-    review: Проверен
+    original: Оригинальный текст
+    translated: Переведенный текст
+    review: Дата проверки
     updated: Обновлен
     created: Создан
+    error: Ошибка
+    show: "Показать"
+    edit: " Обновить"
+    destroy: " Удалить"
+    delete: " Удалить"
+    updated: "Карточка обновленна X"
+    deleted: "Карточка удалена X"
+    created: "Карточка создана X"
+    destroyconfirm: " Точно удалить?"
+    original_translated: "должен отличаться от перевода"
+    translated_original: "должен отличаться от оригинала"

@@ -20,7 +20,10 @@ module Learn
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :en
     I18n.available_locales = [:en, :ru]
-    Rails.application.routes.default_url_options[:locale] = I18n.locale
+
+    # Rails.application.routes.default_url_options[:locale] = I18n.locale
+    # https://github.com/rails/rails/issues/12178 # remove this
+
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
   end
