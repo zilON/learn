@@ -17,12 +17,10 @@ class CardsController < ApplicationController
 
   def new
     @card = Card.new
-
     respond_to do |format|
       format.html
     end
   end
-
 
   def edit
   end
@@ -32,7 +30,7 @@ class CardsController < ApplicationController
 
     respond_to do |format|
       if @card.save
-        format.html { redirect_to @card, notice: t('card.created')  }
+        format.html { redirect_to @card, notice: t("card.created")  }
       else
         format.html { render action: "new" }
       end
@@ -42,7 +40,7 @@ class CardsController < ApplicationController
   def update
     respond_to do |format|
       if @card.update(card_params)
-        format.html { redirect_to @card, notice: t('card.updated') }
+        format.html { redirect_to @card, notice: t("card.updated") }
       else
         format.html { render action: "edit" }
       end
@@ -52,9 +50,8 @@ class CardsController < ApplicationController
   def destroy
     respond_to do |format|
       @card.destroy
-      format.html { redirect_to cards_url, notice: t('card.deleted') }
+      format.html { redirect_to cards_url, notice: t("card.deleted") }
     end
-
   end
 
   private
