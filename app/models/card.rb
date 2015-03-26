@@ -5,9 +5,9 @@ class Card < ActiveRecord::Base
   before_save :capitalize_name
 
   validates :original_text,
-    :translated_text,
-    :review_date,
-    presence: true
+            :translated_text,
+            :review_date,
+            presence: true
 
   validate :original_and_translated_are_different
 
@@ -17,6 +17,7 @@ class Card < ActiveRecord::Base
       errors.add(I18n.t("card.translated"), I18n.t("card.translated_original"))
     end
   end
+
   def review_date
     self.review_date = Time.now + 3.days
   end
