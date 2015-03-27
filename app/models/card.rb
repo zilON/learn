@@ -22,6 +22,6 @@ class Card < ActiveRecord::Base
   protected
 
   def normalize(name)
-    name.downcase
+    Russian.translit(name).downcase.to_s
   end
 end
