@@ -1,6 +1,7 @@
 en:
   logo_name: Little sticky sheet
   card:
+    intro: – The world's first user-friendly flash cards manager. True.
     title: Card
     all: All cards
     new: Add card
@@ -16,9 +17,9 @@ en:
     edit: " Edit"
     destroy: " Delete"
     delete: " Delete"
-    updated: "Card updated"
-    deleted: "Card deleted"
-    created: "Card created"
+    updated: "Card updated X"
+    deleted: "Card deleted X"
+    created: "Card created X"
     destroyconfirm: " A you confirm?"
     original_translated: "should different from translated"
     translated_original: "should different from original"

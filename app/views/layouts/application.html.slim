@@ -12,14 +12,12 @@ html lang="#{I18n.locale}"
         = render "shared/lang"
         i.fa.fa-server
           = link_to t('logo_name'), root_path, class: "logo-name"
+        .intro = t('card.intro')
     section.layoute
-      .large-12-columns
-        p Первый в мире удобный менеджер флеш-карточек. Именно так
+
       .large-12-columns
         = yield
     section.footer
       .large-12-columns
         p &copy; Little sticky sheet
         p = Time.now.year
-
-
