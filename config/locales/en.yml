@@ -1,10 +1,25 @@
 en:
+  logo_name: Little sticky sheet
   card:
+    intro: – The world's first user-friendly flash cards manager. True.
+    title: Card
     all: All cards
-    new: New card
+    new: Add card
+    new_card: New card
     id: id
-    original: Original
-    translated: Translated
-    review: Review
+    original: Original text
+    translated: Translated text
+    review: Last review date
     updated: Updated at
     created: Created at
+    error: Error
+    show: " Show"
+    edit: " Edit"
+    destroy: " Delete"
+    delete: " Delete"
+    updated: "Card updated X"
+    deleted: "Card deleted X"
+    created: "Card created X"
+    destroyconfirm: " A you confirm?"
+    original_translated: "should different from translated"
+    translated_original: "should different from original"

@@ -1,0 +1,30 @@
+=render "shared/buttons"
+.large-12-columns
+  p#notice
+    = notice
+.large-12-columns
+  table.cards-show
+    thead
+      tr
+        th = t('card.id')
+        th = t('card.original')
+        th = t('card.translated')
+        th = t('card.review')
+        th
+    tbody
+      tr
+        td
+          = @card.id
+        td
+          = @card.original_text
+        td
+          = @card.translated_text
+        td
+          = @card.review_date.to_s(:short)
+.actions
+  = link_to t('card.edit'), edit_card_path(@card),
+    class: "button blue margin-r fa fa-pencil pull-right"
+  = link_to t('card.delete'), card_path(@card),
+    class: "button blue margin-r fa fa-trash-o pull-right",
+    method: :delete,
+    data: { confirm: t('card.destroyconfirm')}

@@ -1,0 +1,14 @@
+=render "shared/buttons"
+.large-12-columns
+  H3 Card
+  p#notice
+    = notice
+.large-12-columns
+  h1.cards = t('card.edit')
+.large-12-columns
+  = render 'form'
+  .actions.pull-right
+    = link_to "", card_path,
+      class: "button blue margin-r fa fa-trash-o",
+      method: :delete,
+      data: { confirm: t('card.destroyconfirm')}

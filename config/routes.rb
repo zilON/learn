@@ -7,10 +7,9 @@ Rails.application.routes.draw do
   # root "home#index"
 
   # resources :cards
-
   scope "(:locale)", locale: /#{I18n.available_locales.join('|')}/ do
-    root "home#index"
     resources :cards
+    root "cards#index"
   end
 
   # Example of regular route:

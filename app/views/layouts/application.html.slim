@@ -8,20 +8,16 @@ html lang="#{I18n.locale}"
     = csrf_meta_tags
   body
     section.topbar
-
       .logo
         = render "shared/lang"
         i.fa.fa-server
-          = link_to " Little sticky sheet", root_url
+          = link_to t('logo_name'), root_path, class: "logo-name"
+        .intro = t('card.intro')
     section.layoute
-      .large-12-columns
-        p Первый в мире удобный менеджер флеш-карточек. Именно так
+
       .large-12-columns
         = yield
-
     section.footer
       .large-12-columns
         p &copy; Little sticky sheet
         p = Time.now.year
-
-

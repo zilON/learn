@@ -32,6 +32,7 @@ gem "font-awesome-rails" # fonts icons
 gem 'simple_form'
 
 gem 'russian' #потому, что мы русские
+gem 'unicode_utils' #потому, что мы особенные
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -1,6 +1,8 @@
 =render "shared/buttons"
 .large-12-columns
   h1.cards = t('card.all')
+  p#notice
+    = notice
 .large-12-columns
   table.cards
     thead
@@ -9,20 +11,24 @@
         th = t('card.original')
         th = t('card.translated')
         th = t('card.review')
-        th = t('card.updated')
-        th = t('card.created')
+        th
     tbody
-      - @cards.each do |c|
+      - @cards.each do |card|
         tr
           td
-            = c.id
+            = card.id
           td
-            = c.original_text
+            = card.original_text
           td
-            = c.translated_text
+            = card.translated_text
           td
-            = c.review_date.to_s(:short)
-          td
-            = c.updated_at.to_s(:default)
-          td
-            = c.created_at.to_s(:default)
+            = card.review_date.to_s(:short)
+          td.actions.pull-right
+            = link_to "",card_path(card),
+              class: "button blue margin-r fa fa-eye"
+            = link_to "", edit_card_path(card),
+              class: "button blue margin-r fa fa-pencil"
+            = link_to "", card_path(card),
+              class: "button blue margin-r fa fa-trash-o",
+              method: :delete,
+              data: { confirm: t('card.destroyconfirm')}

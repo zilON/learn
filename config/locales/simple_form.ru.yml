@@ -1,0 +1,18 @@
+ru:
+  simple_form:
+    "yes": 'Да'
+    "no": 'Нет'
+    required:
+      text: 'Необходимо'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Пожалуйста, обратите внимание на проблемы ниже:"
+    labels:
+      card:
+        submit: "Сохранить"
+        original_text: 'Оригинальный текст'
+        translated_text: 'Переведенный текст'
+        review_date: 'Последняя дата проверки'
