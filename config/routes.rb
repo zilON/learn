@@ -6,10 +6,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root "home#index"
 
-  # resources :cards
   scope "(:locale)", locale: /#{I18n.available_locales.join('|')}/ do
     resources :cards
-    root "cards#index"
+    root "home#index"
   end
 
   # Example of regular route:
