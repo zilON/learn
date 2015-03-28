@@ -2,8 +2,7 @@ class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cards = Card.all
-
+    @cards = Card.page(params[:page]).per(20)
     respond_to do |format|
       format.html
     end

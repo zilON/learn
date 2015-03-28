@@ -1,4 +1,5 @@
 =render "shared/buttons"
+
 .large-12-columns
   h1.cards = t('card.all')
   p#notice
@@ -32,3 +33,6 @@
               class: "button blue margin-r fa fa-trash-o",
               method: :delete,
               data: { confirm: t('card.destroyconfirm')}
+
+.pagination
+  = paginate @cards
