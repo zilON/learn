@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use pg as the database
@@ -34,6 +33,7 @@ gem 'simple_form'
 gem 'russian' #потому, что мы русские
 gem 'unicode_utils' #потому, что мы особенные
 
+gem 'nokogiri'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -56,4 +56,5 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
 end
-
+# pagination
+gem 'kaminari'

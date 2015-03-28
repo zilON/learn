@@ -23,3 +23,10 @@ ru:
     destroyconfirm: " Точно удалить?"
     original_translated: "должен отличаться от перевода"
     translated_original: "должен отличаться от оригинала"
+  views:
+    pagination:
+      previous: "&lt; Предидущая"
+      next: "Следующая &gt;"
+      last: "... &gt;"
+      first: "Последняя &gt;"
+      truncate: "&hellip;&rdquo;"
