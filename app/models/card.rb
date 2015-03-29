@@ -1,5 +1,5 @@
 class Card < ActiveRecord::Base
-  before_validation :review_date
+  before_validation :set_review_date, on: :create
 
   validates :original_text,
             :translated_text,
@@ -8,6 +8,27 @@ class Card < ActiveRecord::Base
 
   validate :original_and_translated_are_different
 
+  scope :ready_to_review, -> { where('review_date <= ?', Time.zone.now) }
+
+  def update_review_date!
+    update(review_date: 3.days.since)
+  end
+
+  def check_translation(text)
+    #binding.pry
+    normalize(text.strip) == normalize(original_text)
+  end
+
+  private
+
+  def set_review_date
+    self.review_date ||= 3.days.since # .since - .ago
+  end
+
+  def normalize(name)
+    Russian.translit(name).downcase.to_s
+  end
+
   def original_and_translated_are_different
     if normalize(original_text) == normalize(translated_text)
       errors.add(I18n.t("card.original"), I18n.t("card.original_translated"))
@@ -15,13 +36,4 @@ class Card < ActiveRecord::Base
     end
   end
 
-  def review_date
-    self.review_date = Time.now + 3.days
-  end
-
-  protected
-
-  def normalize(name)
-    Russian.translit(name).downcase.to_s
-  end
 end
