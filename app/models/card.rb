@@ -1,5 +1,6 @@
 class Card < ActiveRecord::Base
   before_validation :set_review_date, on: :create
+  before_save :remove_whitespaces
 
   validates :original_text,
             :translated_text,
@@ -8,14 +9,16 @@ class Card < ActiveRecord::Base
 
   validate :original_and_translated_are_different
 
-  scope :ready_to_review, -> { where("review_date <= ?", Time.zone.now) }
+  scope :ready_to_review, -> { where("review_date <= ?", Time.zone.now).order("RANDOM()").first }
+
+  def check_translation(text)
+    if normalize(text.strip) == normalize(original_text)
+      update_review_date!
+    end
+  end
 
   def update_review_date!
     update(review_date: 3.days.since)
-  end
-
-  def check_translation(text)
-    normalize(text.strip) == normalize(original_text)
   end
 
   private
@@ -33,5 +36,10 @@ class Card < ActiveRecord::Base
       errors.add(I18n.t("card.original"), I18n.t("card.original_translated"))
       errors.add(I18n.t("card.translated"), I18n.t("card.translated_original"))
     end
+  end
+
+  def remove_whitespaces
+    self.original_text = self.original_text.strip
+    self.translated_text = self.translated_text.strip
   end
 end

@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
   before_action :set_card, only: [:update, :show]
+
   def update
-    if @card.check_translation(card_params[:original_text])
-      @card.update_review_date!
+    if @card.check_translation(review_params[:original_text])
       redirect_to root_path
       flash[:success] = t("card.review_success")
     else
@@ -21,7 +21,7 @@ class ReviewsController < ApplicationController
     @card = Card.find(params[:id])
   end
 
-  def card_params
+  def review_params
     params.require(:card).permit(:original_text)
   end
 end
