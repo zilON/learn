@@ -35,5 +35,4 @@ class Card < ActiveRecord::Base
       errors.add(I18n.t("card.translated"), I18n.t("card.translated_original"))
     end
   end
-
 end
