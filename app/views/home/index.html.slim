@@ -1,45 +1,19 @@
 =render "shared/buttons"
-h1 Random Card
-/ .checking-card
-/   label original text
-/   = @cards.original_text
-/   label translated text
-/   = @cards.translated_text
-/   label Date
-/   = @cards.review_date
-
-  / - @cards.where('review_date <= ?', Time.now).find_each do |card|
-  /   = @card.review_date
-  / end
+.large-12-columns
+  H3 Card review
+  p#notice
+    = notice
 
 = render 'reviews/form'
 
 .large-12-columns
-  table.cards
-    thead
-      tr
-        th = t('card.id')
-        th = t('card.original')
-        th = t('card.translated')
-        th = t('card.review')
-        th
-    tbody
-      tr
-        td
-          = @card.id
-        td
-          = @card.original_text
-        td
-          = @card.translated_text
-        td
-          = @card.review_date
-        td.actions.pull-right
-          = link_to "",card_path(@card),
-            class: "button blue margin-r fa fa-eye"
-          = link_to "", edit_card_path(@card),
-            class: "button blue margin-r fa fa-pencil"
-          = link_to "", card_path(@card),
-            class: "button blue margin-r fa fa-trash-o",
-            method: :delete,
-            data: { confirm: t('card.destroyconfirm')}
-.pagination
+  h4  = @card.original_text
+.actions.pull-right
+  = link_to "",card_path(@card),
+    class: "button blue margin-r fa fa-eye"
+  = link_to "", edit_card_path(@card),
+    class: "button blue margin-r fa fa-pencil"
+  = link_to "", card_path(@card),
+    class: "button blue margin-r fa fa-trash-o",
+    method: :delete,
+    data: { confirm: t('card.destroyconfirm')}
