@@ -12,7 +12,6 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @card
   end
 
   private

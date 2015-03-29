@@ -24,7 +24,7 @@ class Card < ActiveRecord::Base
   private
 
   def set_review_date
-    self.review_date ||= 3.days.since # .since - .ago
+    self.review_date ||= 3.days.since
   end
 
   def normalize(name)
