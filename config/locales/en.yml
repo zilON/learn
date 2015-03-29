@@ -23,3 +23,5 @@ en:
     destroyconfirm: " A you confirm?"
     original_translated: "should different from translated"
     translated_original: "should different from original"
+    review_success: "Success! true. K.O."
+    review_error: "Invalid translation, try again!"

@@ -1,0 +1,13 @@
+= simple_form_for(@card, url: review_path(@card)) do |f|
+  - flash.each do |name, msg|
+    .large-12-columns
+      = content_tag :div, msg, id: name
+
+  .large-12-columns
+    .original.large-6-columns
+      = f.input :original_text, input_html: { value: '' }
+    .translated.large-6-columns
+      p
+        = f.label :translated_text
+        = @card.translated_text
+  = f.button :submit, class: 'pull-right'
