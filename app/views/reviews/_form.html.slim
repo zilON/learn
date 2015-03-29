@@ -1,8 +1,7 @@
 = simple_form_for(@card, url: review_path(@card)) do |f|
   - flash.each do |name, msg|
     .large-12-columns
-      p.message
-        = content_tag :div, msg, class: name
+      = content_tag :div, msg, id: name
 
   .large-12-columns
     .original.large-6-columns

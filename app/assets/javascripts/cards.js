@@ -1,11 +1,11 @@
 $(document).ready(function () {
-  $("#notice").show();
+  $("#notice,#success").show();
   setTimeout(showNotice, 5000);
   function showNotice() {
-    $("#notice:visible").remove();
+    $("#notice:visible,#success:visible").remove();
   }
-  $( "#notice" ).click(function() {
-    $( "#notice" ).slideUp( "fast", function() {
+  $( "#notice,#success" ).click(function() {
+    $( "#notice,#success"  ).slideUp( "fast", function() {
     });
   });
 });
