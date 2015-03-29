@@ -39,7 +39,7 @@ class Card < ActiveRecord::Base
   end
 
   def remove_whitespaces
-    self.original_text = self.original_text.strip
-    self.translated_text = self.translated_text.strip
+    self.original_text = original_text.strip
+    self.translated_text = translated_text.strip
   end
 end
