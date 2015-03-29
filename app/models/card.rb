@@ -8,14 +8,14 @@ class Card < ActiveRecord::Base
 
   validate :original_and_translated_are_different
 
-  scope :ready_to_review, -> { where('review_date <= ?', Time.zone.now) }
+  scope :ready_to_review, -> { where("review_date <= ?", Time.zone.now) }
 
   def update_review_date!
     update(review_date: 3.days.since)
   end
 
   def check_translation(text)
-    #binding.pry
+    # binding.pry
     normalize(text.strip) == normalize(original_text)
   end
 
