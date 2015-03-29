@@ -15,7 +15,6 @@ class Card < ActiveRecord::Base
   end
 
   def check_translation(text)
-    # binding.pry
     normalize(text.strip) == normalize(original_text)
   end
 

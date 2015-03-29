@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  before_action :set_card, only: [:show, :edit, :update, :destroy, :check_card]
+  before_action :set_card, only: [:show, :edit, :update, :destroy]
 
   def index
     @cards = Card.page(params[:page]).per(20)

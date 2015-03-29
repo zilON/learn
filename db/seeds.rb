@@ -10,6 +10,5 @@
 Card.destroy_all
 
 load "db/fixtures/en_de.rb"
-# load "db/fixtures/en_ru.rb"
 
 puts "All done"
