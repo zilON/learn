@@ -56,6 +56,8 @@ group :development, :test do
   # более лучшие ошибки
   gem 'better_errors'
   gem 'binding_of_caller'
+  # tests
+  gem 'rspec-rails', '~> 3.0'
 end
 # pagination
 gem 'kaminari'

@@ -12,8 +12,10 @@ class Card < ActiveRecord::Base
   scope :ready_to_review, -> { where("review_date <= ?", Time.zone.now).order("RANDOM()").first }
 
   def check_translation(text)
-    if normalize(text.strip) == normalize(original_text)
+    if normalize(text) == normalize(original_text)
       update_review_date!
+    else
+      return false
     end
   end
 
@@ -28,7 +30,7 @@ class Card < ActiveRecord::Base
   end
 
   def normalize(name)
-    Russian.translit(name).downcase.to_s
+    Russian.translit(name).downcase.split.join(" ")
   end
 
   def original_and_translated_are_different
