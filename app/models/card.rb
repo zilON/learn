@@ -30,7 +30,7 @@ class Card < ActiveRecord::Base
   end
 
   def normalize(name)
-    Russian.translit(name).downcase.split.join(" ")
+    name.mb_chars.downcase.split.join(" ").to_s
   end
 
   def original_and_translated_are_different
