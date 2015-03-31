@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe Card do
-  let(:card) {Card.create(original_text: "hausE SOmE ДоМ", translated_text: "hauses")}
-  let(:card_bad) {Card.new(original_text: "home", translated_text: "home", review_date: Date.today)}
+  let(:card) { Card.create(original_text: "hausE SOmE ДоМ", translated_text: "hauses") }
+  let(:card_bad) { Card.new(original_text: "home", translated_text: "home", review_date: Date.today) }
 
   it 'check translation' do
     expect(card.check_translation("вигвам")).to be false
