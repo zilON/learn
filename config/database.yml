@@ -1,0 +1,25 @@
+#
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: card_development
+  pool: 5
+  username: Card
+  password:
+
+
+test: &test
+  adapter: postgresql
+  encoding: unicode
+  database: card_test
+  pool: 5
+  username: Card
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: card_production
+  pool: 5
+  username: Card
+  password:
