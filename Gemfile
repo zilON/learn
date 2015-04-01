@@ -58,6 +58,8 @@ group :development, :test do
   gem 'binding_of_caller'
   # tests
   gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl', '~> 4.5.0'
+  gem 'capybara', '~> 2.4.4'
 end
 # pagination
 gem 'kaminari'
