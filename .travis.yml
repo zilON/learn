@@ -1,9 +1,9 @@
 language: ruby
-rbenv:
-  - 2.2.1
+rbenv: 2.2.1
+env:
+  - RAILS_ENV=test
 addons:
-  postgresql: "9.3"
+  postgresql: "9.4"
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
-script:
-  - RAILS_ENV=test bundle exec rake db:test:prepare
+  - bundle exec rake db:test:prepare
