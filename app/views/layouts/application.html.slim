@@ -14,7 +14,7 @@ html lang="#{I18n.locale}"
           = link_to t('logo_name'), root_path, class: "logo-name"
         .intro = t('card.intro')
     section.layoute
-
+      = render "shared/flash"
       .large-12-columns
         = yield
     section.footer

@@ -60,6 +60,10 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'capybara', '~> 2.4.4'
+  gem 'launchy'
+  gem 'database_rewinder'
+  gem 'shoulda-matchers'
+  gem 'timecop'
 end
 # pagination
 gem 'kaminari', '~> 0.16.3'

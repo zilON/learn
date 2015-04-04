@@ -9,7 +9,7 @@ class Card < ActiveRecord::Base
 
   validate :original_and_translated_are_different
 
-  scope :ready_to_review, -> { where("review_date <= ?", Time.zone.now).order("RANDOM()").first }
+  scope :ready_to_review, -> { where("review_date <= ?", Time.zone.now).order("RANDOM()") }
 
   def check_translation(text)
     if normalize(text) == normalize(original_text)
@@ -30,7 +30,7 @@ class Card < ActiveRecord::Base
   end
 
   def normalize(name)
-    name.mb_chars.downcase.split.join(" ").to_s
+    name.to_s.mb_chars.downcase.split.join(" ")
   end
 
   def original_and_translated_are_different
