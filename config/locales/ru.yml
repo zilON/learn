@@ -25,6 +25,7 @@ ru:
     translated_original: "должен отличаться от оригинала"
     review_success: "Ты молодец!"
     review_error: "Не угадал, попробуй еще раз..."
+    nothing_to_review: "Нет карт для проверки"
   views:
     pagination:
       previous: "&lt; Предидущая"

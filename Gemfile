@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use pg as the database
@@ -45,8 +45,8 @@ gem 'nokogiri'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-  gem 'pry'
+  gem 'byebug', '~> 4.0.4'
+  gem 'pry', '~> 0.10.1'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -54,10 +54,16 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   # более лучшие ошибки
-  gem 'better_errors'
-  gem 'binding_of_caller'
+  gem 'better_errors', '~> 2.1.1'
+  gem 'binding_of_caller', '~> 0.7.2'
   # tests
   gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails', '~> 4.5.0'
+  gem 'capybara', '~> 2.4.4'
+  gem 'launchy'
+  gem 'database_rewinder'
+  gem 'shoulda-matchers'
+  gem 'timecop'
 end
 # pagination
-gem 'kaminari'
+gem 'kaminari', '~> 0.16.3'
