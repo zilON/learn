@@ -3,10 +3,12 @@ require 'open-uri'
 
 page = Nokogiri::HTML(open ("http://www.languagedaily.com/learn-german/vocabulary/common-german-words/"))
 
+User.create(email: "some@email.com", password: "123456")
+
 page.css('.jsn-article-content > table > tbody > tr').each do |row|
   de = row.css('td:nth-child(2)')
   en = row.css('td:nth-child(3)')
-  Card.create(original_text: de.text, translated_text: en.text, review_date: Time.zone.now)
+  Card.create(original_text: de.text, translated_text: en.text, review_date: Time.zone.now, user_id: 1)
 end
 puts "Loading data from 1 page complite"
 
@@ -15,7 +17,7 @@ page = Nokogiri::HTML(open ("http://www.languagedaily.com/learn-german/vocabular
 page.css('.jsn-article-content > table > tbody > tr').each do |row|
   de = row.css('td:nth-child(2)')
   en = row.css('td:nth-child(3)')
-  Card.create(original_text: de.text, translated_text: en.text, review_date: Time.zone.now )
+  Card.create(original_text: de.text, translated_text: en.text, review_date: Time.zone.now, user_id: 1 )
 end
 puts "Loading data from 2 page complite"
 
@@ -24,7 +26,7 @@ page = Nokogiri::HTML(open ("http://www.languagedaily.com/learn-german/vocabular
 page.css('.jsn-article-content > table > tbody > tr').each do |row|
   de = row.css('td:nth-child(2)')
   en = row.css('td:nth-child(3)')
-  Card.create(original_text: de.text, translated_text: en.text, review_date: Time.zone.now)
+  Card.create(original_text: de.text, translated_text: en.text, review_date: Time.zone.now, user_id: 1)
 end
 puts "Loading data from 3 page complite"
 
@@ -33,7 +35,7 @@ page = Nokogiri::HTML(open ("http://www.languagedaily.com/learn-german/vocabular
 page.css('.jsn-article-content > table > tbody > tr').each do |row|
   de = row.css('td:nth-child(2)')
   en = row.css('td:nth-child(3)')
-  Card.create(original_text: de.text, translated_text: en.text, review_date: Time.zone.now)
+  Card.create(original_text: de.text, translated_text: en.text, review_date: Time.zone.now, user_id: 1)
 end
 puts "Loading data from 4 page complite"
 puts page.title.first(13)
