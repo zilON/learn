@@ -1,10 +1,14 @@
 class Card < ActiveRecord::Base
+  belongs_to :user
   before_validation :set_review_date, on: :create
   before_save :remove_whitespaces
 
   validates :original_text,
             :translated_text,
             :review_date,
+            presence: true
+
+  validates :user_id,
             presence: true
 
   validate :original_and_translated_are_different
