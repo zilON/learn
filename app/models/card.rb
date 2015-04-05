@@ -6,9 +6,7 @@ class Card < ActiveRecord::Base
   validates :original_text,
             :translated_text,
             :review_date,
-            presence: true
-
-  validates :user_id,
+            :user_id,
             presence: true
 
   validate :original_and_translated_are_different
