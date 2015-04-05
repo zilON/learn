@@ -67,3 +67,5 @@ group :development, :test do
 end
 # pagination
 gem 'kaminari', '~> 0.16.3'
+#
+gem 'sorcery', '~> 0.9.1'
