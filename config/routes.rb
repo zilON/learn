@@ -5,12 +5,17 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root "home#index"
-
   scope "(:locale)", locale: /#{I18n.available_locales.join('|')}/ do
+    # root 'users#index'
+    post 'logout' => 'user_sessions#destroy', :as => :logout
+    get 'login' => 'user_sessions#new', :as => :login
+    get "signup" => "users#new", :as => "signup"
+    resources :user_sessions
+    resources :users
+
     root "home#index"
     resources :cards
     resources :reviews, only: [:update, :show]
-    resources :users
   end
 
   # Example of regular route:

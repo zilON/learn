@@ -9,10 +9,14 @@ html lang="#{I18n.locale}"
   body
     section.topbar
       .logo
-        = render "shared/lang"
-        i.fa.fa-server
-          = link_to t('logo_name'), root_path, class: "logo-name"
-        .intro = t('card.intro')
+        .large-8-columns
+          i.fa.fa-server
+            = link_to t('logo_name'), root_path, class: "logo-name"
+          .intro = t('card.intro')
+        .large-4-columns
+          = render "shared/lang"
+          = render "shared/login"
+
     section.layoute
       = render "shared/flash"
       .large-12-columns
