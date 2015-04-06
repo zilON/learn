@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     root "home#index"
     resources :cards
     resources :reviews, only: [:update, :show]
+    resources :users
   end
 
   # Example of regular route:
