@@ -1,21 +1,23 @@
 =render "shared/buttons"
 .large-12-columns
+- if current_user
   H3 Card review
+  - if @card.present?
+    = render 'reviews/form'
 
-- if @card.present?
-  = render 'reviews/form'
-
-  .large-12-columns
-    h4  = @card.original_text
-    h4  = @card.review_date
-  .actions.pull-right
-    = link_to "", card_path(@card),
-      class: "button blue margin-r fa fa-eye"
-    = link_to "", edit_card_path(@card),
-      class: "button blue margin-r fa fa-pencil"
-    = link_to "", card_path(@card),
-      class: "button blue margin-r fa fa-trash-o",
-      method: :delete,
-      data: { confirm: t('card.destroyconfirm')}
+    .large-12-columns
+      h4  = @card.original_text
+      h4  = @card.review_date
+    .actions.pull-right
+      = link_to "", card_path(@card),
+        class: "button blue margin-r fa fa-eye"
+      = link_to "", edit_card_path(@card),
+        class: "button blue margin-r fa fa-pencil"
+      = link_to "", card_path(@card),
+        class: "button blue margin-r fa fa-trash-o",
+        method: :delete,
+        data: { confirm: t('card.destroyconfirm')}
+  - else
+   p = t("card.nothing_to_review")
 - else
- p = t("card.nothing_to_review")
+  =render "shared/unregistred"

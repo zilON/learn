@@ -2,7 +2,7 @@ class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cards = Card.page(params[:page]).per(20)
+    @cards = current_user.cards.page(params[:page]).per(20)
     respond_to do |format|
       format.html
     end
@@ -25,7 +25,7 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.new(card_params)
+    @card = current_user.cards.build(card_params)
     respond_to do |format|
       if @card.save
         format.html { redirect_to @card, notice: t("card.created")  }
@@ -55,7 +55,7 @@ class CardsController < ApplicationController
   private
 
     def set_card
-      @card = Card.find(params[:id])
+      @card = current_user.cards.find(params[:id])
     end
 
     def card_params
