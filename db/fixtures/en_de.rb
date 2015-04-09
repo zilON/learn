@@ -3,7 +3,7 @@ require 'open-uri'
 
 page = Nokogiri::HTML(open ("http://www.languagedaily.com/learn-german/vocabulary/common-german-words/"))
 
-User.create(email: "some@email.com", password: "123456")
+# User.create(email: "some@email.com", password: "123456")
 
 page.css('.jsn-article-content > table > tbody > tr').each do |row|
   de = row.css('td:nth-child(2)')

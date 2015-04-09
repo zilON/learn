@@ -1,7 +1,11 @@
+include UserHelper
 feature "Review a card" do
-  let!(:card) { FactoryGirl.create(:card, :to_check) }
-  before { visit root_path }
-
+  let!(:user) { FactoryGirl.create(:user)}
+  let!(:card) {  FactoryGirl.create(:card, :to_check) }
+  before{
+    visit root_path
+    login
+  }
   describe "review errors" do
     scenario "shows error with wrong text used" do
       fill_in "Original text", with: "some text"
