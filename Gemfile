@@ -61,7 +61,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'capybara', '~> 2.4.4'
   gem 'launchy'
-  gem 'database_rewinder'
+  gem 'database_cleaner', '~> 1.4.1'
   gem 'shoulda-matchers'
   gem 'timecop'
 end
