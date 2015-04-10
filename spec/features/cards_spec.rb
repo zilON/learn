@@ -1,7 +1,6 @@
 include UserHelper
 feature "Review a card" do
-  let!(:user) { FactoryGirl.create(:user)}
-  let!(:card) {  FactoryGirl.create(:card, :to_check) }
+  let!(:card) { FactoryGirl.create(:card, :to_check) }
   before{
     visit root_path
     login
