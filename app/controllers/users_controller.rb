@@ -20,7 +20,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        auto_login(@user)
+        format.html { redirect_to cards_url, notice: 'User was successfully created.' }
       else
         format.html { render :new }
       end
@@ -40,7 +41,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: 'User was successfully destroyed.' }
     end
   end
 
