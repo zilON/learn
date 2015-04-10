@@ -1,5 +1,3 @@
-require "rails_helper"
-
 describe Card do
   let(:card) { FactoryGirl.create(:card) }
   let(:card_bad) { Card.create(original_text: "home", translated_text: "home", review_date: Date.today) }

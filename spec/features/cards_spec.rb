@@ -1,6 +1,7 @@
 include UserHelper
 feature "Review a card" do
-  let!(:card) { FactoryGirl.create(:card, :to_check) }
+  let!(:user) { FactoryGirl.create(:user) }
+  let!(:card) { FactoryGirl.create(:card, :to_check, user_id: user.id) }
   before{
     login
   }
@@ -24,11 +25,11 @@ feature "Review a card" do
 
 end
 feature "Cards CRUD" do
-  let!(:card) { FactoryGirl.create(:card, :to_check) }
+  let!(:user) { FactoryGirl.create(:user) }
+  let!(:card) { FactoryGirl.create(:card, :to_check, user_id: user.id) }
   before{
     login
   }
-
   scenario "create user card" do
     visit new_card_path
     fill_in "Original text", with: "Some original text"
