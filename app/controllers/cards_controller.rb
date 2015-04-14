@@ -3,22 +3,13 @@ class CardsController < ApplicationController
 
   def index
     @cards = current_user.cards.page(params[:page]).per(20)
-    respond_to do |format|
-      format.html
-    end
   end
 
   def show
-    respond_to do |format|
-      format.html
-    end
   end
 
   def new
     @card = Card.new
-    respond_to do |format|
-      format.html
-    end
   end
 
   def edit
@@ -26,30 +17,24 @@ class CardsController < ApplicationController
 
   def create
     @card = current_user.cards.build(card_params)
-    respond_to do |format|
-      if @card.save
-        format.html { redirect_to @card, notice: t("card.created")  }
-      else
-        format.html { render action: "new" }
-      end
+    if @card.save
+      format.html { redirect_to @card, notice: t("card.created")  }
+    else
+      format.html { render action: "new" }
     end
   end
 
   def update
-    respond_to do |format|
-      if @card.update(card_params)
-        format.html { redirect_to @card, notice: t("card.updated") }
-      else
-        format.html { render action: "edit" }
-      end
+    if @card.update(card_params)
+      format.html { redirect_to @card, notice: t("card.updated") }
+    else
+      format.html { render action: "edit" }
     end
   end
 
   def destroy
-    respond_to do |format|
-      @card.destroy
-      format.html { redirect_to cards_url, notice: t("card.deleted") }
-    end
+    @card.destroy
+    format.html { redirect_to cards_url, notice: t("card.deleted") }
   end
 
   private
