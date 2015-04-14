@@ -3,10 +3,12 @@ class User < ActiveRecord::Base
     config.authentications_class = Authentication
   end
 
-  validates :password, length: { minimum: 3 }, unless: :has_authentications?
-  validates :password, confirmation: true, unless: :has_authentications?
-  validates :password_confirmation, presence: true, unless: :has_authentications?
-  validates :email, uniqueness: true, presence: true, unless: :has_authentications?
+  with_options unless: :has_authentications? do |user|
+    user.validates :password, length: { minimum: 3 }
+    user.validates :password, confirmation: true
+    user.validates :password_confirmation, presence: true
+    user.validates :email, uniqueness: true, presence: true
+  end
 
   has_many :cards, dependent: :destroy, counter_cache: true
   has_many :authentications, dependent: :destroy
