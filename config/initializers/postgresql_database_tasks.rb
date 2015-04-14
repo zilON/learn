@@ -9,4 +9,4 @@ module ActiveRecord
     end
   end
 end
-#rake environment db:drop  # to unlock and drop db
+# rake environment db:drop  # to unlock and drop db
