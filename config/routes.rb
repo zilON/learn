@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # get 'oauths/oauth'
+
+  # get 'oauths/callback'
+
   # root 'home/index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -16,6 +20,10 @@ Rails.application.routes.draw do
     root "home#index"
     resources :cards
     resources :reviews, only: [:update, :show]
+
+    post 'oauth/callback' => 'oauths#callback'
+    get 'oauth/callback' => 'oauths#callback'
+    get 'oauth/:provider' => 'oauths#oauth', as: :auth_at_provider
   end
 
   # Example of regular route:

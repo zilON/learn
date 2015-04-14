@@ -9,3 +9,5 @@ ul.login.pull-right
       = link_to "Register", new_user_path
     li
       = link_to "Login", :login
+    li
+      = link_to 'GitHub Login', auth_at_provider_path(:provider => :github)

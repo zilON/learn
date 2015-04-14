@@ -69,3 +69,4 @@ end
 gem 'kaminari', '~> 0.16.3'
 #
 gem 'sorcery', '~> 0.9.1'
+gem 'figaro'
