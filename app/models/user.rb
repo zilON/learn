@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true, presence: true, unless: :has_authentications?
 
   has_many :cards, dependent: :destroy, counter_cache: true
-  has_many :authentications, :dependent => :destroy
+  has_many :authentications, dependent: :destroy
   accepts_nested_attributes_for :authentications
 
   def has_authentications?
